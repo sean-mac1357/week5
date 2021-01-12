@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM Starter Kit</title>
+    <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <h1>Madlibs!</h1>
+        </div>
+    </header>
+    <main>
+        <div class="wrapper">
+            <section>
+                <form id="generateMadlib" action="#" method="POST">
+                    <label for="myAdjective">Adjective:</label>
+                    <input type="text" name="myAdjective" id="myAdjective" placeholder="Choose an adjective" />
+                    <label>
+                    <label for="myPluralNoun">Plural Noun:</label>
+                    <input type="text" name="myPluralNoun" id="myPluralNoun" placeholder="Choose a Plural Noun" />
+                    <label>
+                    <label for="mySomethingAlive">Something Alive:</label>
+                    <input type="text" name="mySomethingAlive" id="mySomethingAlive" placeholder="Choose something alive (plural)" />
+                    <label>
+                    <label for="myFemaleCelebrity">Female Celebrity:</label>
+                    <input type="text" name="myFemaleCelebrity" id="myFemaleCelebrity" placeholder="Choose a Female Celebrity" />
+                    <label>
+                    <label for="myPluralNoun3">Another Plural Noun:</label>
+                    <input type="text" name="myPluralNoun3" id="myPluralNoun3" placeholder="Another Plural Noun" />
+                    <label>
+                    <label for="myPluralNoun4">Another Plural Noun:</label>
+                    <input type="text" name="myPluralNoun4" id="myPluralNoun4" placeholder="Another Plural Noun" />
+                    <label>
+                    <label for="myAdverb">Adverb:</label>
+                    <input type="text" name="myAdverb" id="myAdverb" placeholder="Choose an Adverb" />
+                    <label>
+                    <label for="myAdjective2">Another Adjective:</label>
+                    <input type="text" name="myAdjective2" id="myAdjective2" placeholder="Another Adjective" />
+                    <label>
+                    <label for="mySomethingSticky">Something Sticky:</label>
+                    <input type="text" name="mySomethingSticky" id="mySomethingSticky" placeholder="Choose Something that is sticky" />
+                    <label>
+                    <label for="myNoun">Noun:</label>
+                    <input type="text" name="myNoun" id="myNoun" placeholder="Choose a Noun" />
+                    <label>
+                    <label for="myNoun2">Another Noun:</label>
+                    <input type="text" name="myNoun2" id="myNoun2" placeholder="Choose another Noun" />
+                    <label>
+                    <label for="myAdjective3">Another Adjective:</label>
+                    <input type="text" name="myAdjective3" id="myAdjective3" placeholder="Choose another adjective" />
+                    <label>
+                    <label for="myFriend">Friends Name:</label>
+                    <input type="text" name="myFriend" id="myFriend" placeholder="Choose a Friends name" />
+                    <label>
+                    <label for="myChemical">A Chemical:</label>
+                    <input type="text" name="myChemical" id="myChemical" placeholder="Choose a Chemical" />
+                    <label>
+                    <label for="myFood">Favorite Food:</label>
+                    <input type="text" name="myFood" id="myFood" placeholder="Choose you Favorite Food" />
+                    <label>
+                    <label for="myLiquid">A Liquid:</label>
+                    <input type="text" name="myLiquid" id="myLiquid" placeholder="Choose a Liquid" />
+                    </label>
+                    <button type="submit">Choose your side</button>
+                    <button id="showModal" type="button">Show Modal</button>
+                </form>
+            </section>
+        </div>
+    </main>
+    <div id="overlay" class="overlay">
+        <div id="modal" class="modal">
+            <h1>Hello, I am a modal</h1>
+<p>Once a week, we have a science laboratory class, and we get to do <span id="adjectiveResponse" class="madlib_placeholder"></span> experiments with <span id="pluralNounResponse" class="madlib_placeholder"></span> and <span id="somethingAliveResponse" class="madlib_placeholder"></span>. Our teacher, Ms. <span id="femaleCelebrityResponse" class="madlib_placeholder"></span>, shows us how to dissect <span id="somethingAlive2Response" class="madlib_placeholder"></span>. First we take out the internal <span id="pluralNoun3Response" class="madlib_placeholder"></span> and <span id="pluralNoun4Response" class="madlib_placeholder"></span> and draw pictures of what we see in our notebooks. We have to work <span id="adverbResponse" class="madlib_placeholder"></span> or else we'll make a mess. We also learn to use chemicals to make <span id="adjective2Response" class="madlib_placeholder"></span> things like inexpensive household <span id="somethingStickyResponse" class="madlib_placeholder"></span> and deodorizers that make a/an <span id="nounResponse" class="madlib_placeholder"></span> smell like a/an <span id="noun2Response" class="madlib_placeholder"></span>. Last week, we had a/an <span id="adjective3Response" class="madlib_placeholder"></span> accident in the lab. <span id="friendResponse" class="madlib_placeholder"></span> mixed some <span id="chemicalResponse" class="madlib_placeholder"></span> with <span id="foodResponse" class="madlib_placeholder"></span> and added some <span id="liquidResponse" class="madlib_placeholder"></span> and the mixture exploded and blew <span id="friend2Response" class="madlib_placeholder"></span> and <span id="femaleCelebrity2Response" class="madlib_placeholder"></span> through the roof. So now we have a new teacher that doesn't let us do experiments.  </p>
+            <button id="closeModal" class="close" type="button">X</button>
+        </div>
+</body>
+<script src="js/index.js"></script>
+</html>
