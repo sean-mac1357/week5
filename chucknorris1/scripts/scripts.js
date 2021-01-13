@@ -1,18 +1,53 @@
 'use strict';
 
-const quote = fetch('https://api.chucknorris.io/jokes/random?category=dev')
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        updateBody(data.value);
-    })
-    .catch(function (error) {
-        console.error("ERROR", error);
-        return error;
+function getQuote(category) {
+    const url = `https://api.chucknorris.io/jokes/random?category=${category}`;
+    get(url).then(function (response) {
+        updateBody(response.value);
     });
+}
+
+function getCategories() {
+    const url = 'https://api.chucknorris.io/jokes/categories';
+    get(url).then(function (response) {
+        buildCategoryList(response);
+    })
+}
 
 function updateBody(quote) {
-    const chuckSays = document.querySelector('#chuckSays');
-    chuckSays.innerHTML = quote;
+    const paragraph = document.querySelector('#modal p');
+    paragraph.innerHTML = quote;
+    toggleModal();
 }
+
+function buildCategoryList(categoryList) {
+    // Filter out the "explicit" and "celebrity"     categories
+    const filteredList = categoryList.filter(function (category) {
+        if (category !== 'explicit' && category !== 'celebrity') {
+            return category;
+        }
+    });
+
+    const form = document.querySelector('#changeQuote');
+    const categorySelect = document.createElement('select');
+    filteredList.map(function (category) {
+        const categoryOption = document.createElement('option');
+        categoryOption.value = category;
+        categoryOption.text = category;
+        categorySelect.appendChild(categoryOption);
+    });
+    form.appendChild(categorySelect);    
+    
+    categorySelect.addEventListener('change', function (event) {
+        getQuote(event.target.value);
+    })
+}
+
+closeModal.addEventListener('click', toggleModal)
+
+function toggleModal() {
+    const modalOverlay = document.querySelector("#overlay");
+    modalOverlay.classList.toggle("visible");
+}
+getCategories();
+getQuote('career');

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styles2.css">
+    <title>Weather App Solution</title>
+    </head>
+    <body>
+        <header>
+            <div class='wrapper'>
+                <h1>Get your weather!</h1>
+            </div>
+        </header>
+        <main>
+            <div class="wrapper" id="main">
+                <section>
+                    <form action="#" id="generateWeather" method="POST">
+                        <label for="zipCode">Enter your zip:
+                            <input type="text" name="zipCode" id="zip" placeholder="30269" required />
+                    </label>
+                        <button type="submit" id="showModal">Show Weather</button>
+                    </form>
+                </section>
+            </div>
+            <!-- <form id="changeQuote" action="#" method="GET"></form> -->
+        </main>
+        <div id="overlay" class="overlay">
+            <div id="modal" class="modal">
+                <h3>The weather for <span id="zipCodeResponse" class="zipcode_placeholder"></span> is:</h3>
+                <p></p>
+                <button id="closeModal" class="close" type="button">X</button>
+            </div>
+        </div>
+    </body>
+    <script src="scripts/scripts2.js"></script>
+</html>
