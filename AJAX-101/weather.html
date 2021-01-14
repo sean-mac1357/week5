@@ -3,6 +3,7 @@
     <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/styles2.css">
     <title>Weather App Solution</title>
     </head>
@@ -14,24 +15,36 @@
         </header>
         <main>
             <div class="wrapper" id="main">
-                <section>
-                    <form action="#" id="generateWeather" method="POST">
-                        <label for="zipCode">Enter your zip:
-                            <input type="text" name="zipCode" id="zip" placeholder="30269" required />
-                    </label>
-                        <button type="submit" id="showModal">Show Weather</button>
-                    </form>
-                </section>
+                <form action="#" id="changeWeather" method="GET">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        See what the weather 
+                            looks like.
+                    </button>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">The Weather Forv</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body" id="modal-body">
+                                    <p></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <!-- <form id="changeQuote" action="#" method="GET"></form> -->
         </main>
-        <div id="overlay" class="overlay">
-            <div id="modal" class="modal">
-                <h3>The weather for <span id="zipCodeResponse" class="zipcode_placeholder"></span> is:</h3>
-                <p></p>
-                <button id="closeModal" class="close" type="button">X</button>
-            </div>
-        </div>
     </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="scripts/get.js"></script>
     <script src="scripts/scripts2.js"></script>
 </html>

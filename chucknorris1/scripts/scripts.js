@@ -15,13 +15,11 @@ function getCategories() {
 }
 
 function updateBody(quote) {
-    const paragraph = document.querySelector('#modal p');
+    const paragraph = document.querySelector('div #modal-body p');
     paragraph.innerHTML = quote;
-    toggleModal();
 }
 
 function buildCategoryList(categoryList) {
-    // Filter out the "explicit" and "celebrity"     categories
     const filteredList = categoryList.filter(function (category) {
         if (category !== 'explicit' && category !== 'celebrity') {
             return category;
@@ -43,11 +41,5 @@ function buildCategoryList(categoryList) {
     })
 }
 
-closeModal.addEventListener('click', toggleModal)
-
-function toggleModal() {
-    const modalOverlay = document.querySelector("#overlay");
-    modalOverlay.classList.toggle("visible");
-}
 getCategories();
 getQuote('career');
